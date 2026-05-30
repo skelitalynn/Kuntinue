@@ -1,6 +1,6 @@
-# Basketball Duck Pet
+# Kuntinue
 
-Standalone Windows desktop pet built from the Basketball Duck spritesheet.
+谁不想急头白脸地在桌面上养一只可爱的坤坤呢？
 
 ## Development
 
