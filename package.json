@@ -1,0 +1,57 @@
+{
+  "name": "basketball-duck-desktop",
+  "version": "1.0.2",
+  "description": "A standalone desktop pet built from the Basketball Duck spritesheet.",
+  "main": "src/main.js",
+  "author": "Basketball Duck",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win nsis",
+    "dist:portable": "electron-builder --win portable",
+    "dist:zip": "electron-builder --win zip"
+  },
+  "devDependencies": {
+    "electron": "^39.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.basketballduck.pet",
+    "productName": "Basketball Duck Pet",
+    "artifactName": "BasketballDuckPet-Setup-${version}.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true,
+      "shortcutName": "Basketball Duck Pet"
+    },
+    "portable": {
+      "artifactName": "BasketballDuckPet-Portable-${version}.${ext}"
+    }
+  }
+}
